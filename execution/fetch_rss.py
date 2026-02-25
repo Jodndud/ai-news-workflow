@@ -9,8 +9,11 @@ from dotenv import load_dotenv
 load_dotenv()
 
 def fetch_news():
+    # 프로젝트 루트 경로 가져오기
+    project_root = os.getenv("PROJECT_ROOT", os.path.join(os.path.dirname(__file__), '..'))
+    
     # RSS 리스트 읽기
-    rss_list_path = os.path.join(os.path.dirname(__file__), '..', 'RSSList.json')
+    rss_list_path = os.path.join(project_root, 'RSSList.json')
     with open(rss_list_path, 'r', encoding='utf-8') as f:
         sources = json.load(f)
 
@@ -51,7 +54,7 @@ def fetch_news():
             print(f" - 에러 발생: {e}")
 
     # 결과 저장 (임시 파일)
-    tmp_dir = os.path.join(os.path.dirname(__file__), '..', '.tmp')
+    tmp_dir = os.path.join(project_root, '.tmp')
     os.makedirs(tmp_dir, exist_ok=True)
     
     output_path = os.path.join(tmp_dir, 'latest_news.json')

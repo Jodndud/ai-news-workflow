@@ -44,8 +44,11 @@ def slugify(text):
     return text[:20]  # 최대 20자 제한
 
 def process_news():
+    # 프로젝트 루트 경로 가져오기
+    project_root = os.getenv("PROJECT_ROOT", os.path.join(os.path.dirname(__file__), '..'))
+
     # 1. 수집된 뉴스 로드
-    latest_news_path = os.path.join(os.path.dirname(__file__), '..', '.tmp', 'latest_news.json')
+    latest_news_path = os.path.join(project_root, '.tmp', 'latest_news.json')
     if not os.path.exists(latest_news_path):
         print("수집된 뉴스가 없습니다. fetch_rss.py를 먼저 실행하세요.")
         return
@@ -54,18 +57,22 @@ def process_news():
         news_items = json.load(f)
 
     # 2. 프롬프트 지침 로드 (makeMD.md)
-    makemd_path = os.path.join(os.path.dirname(__file__), '..', 'makeMD.md')
+    makemd_path = os.path.join(project_root, 'makeMD.md')
     with open(makemd_path, 'r', encoding='utf-8') as f:
         prompt_instruction = f.read()
 
-    # AMUZ_MEMO_PATH 경로 가져오기
-    amuz_memo_path = os.getenv("AMUZ_MEMO_PATH")
-    if not amuz_memo_path:
-        print("에러: .env 파일에 AMUZ_MEMO_PATH가 설정되지 않았습니다.")
+    # BASIC_PATH 경로 가져오기
+    basic_path = os.getenv("BASIC_PATH")
+    if not basic_path:
+        print("에러: .env 파일에 BASIC_PATH가 설정되지 않았습니다.")
         return
 
     # 저장될 최종 디렉토리 (기존 git_sync.py의 dest_dir와 일치시킴)
-    news_dir = os.path.join(amuz_memo_path, '000.Data', 'AI News')
+    news_subdir = os.getenv("NEWS_SUBDIR")
+    if not news_subdir:
+        print("에러: .env 파일에 NEWS_SUBDIR가 설정되지 않았습니다.")
+        return
+    news_dir = os.path.join(basic_path, news_subdir)
     os.makedirs(news_dir, exist_ok=True)
 
     for item in news_items:
