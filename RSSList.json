@@ -1,0 +1,42 @@
+[
+  {
+    "source_name": "OpenAI Blog",
+    "url": "https://openai.com/blog/rss.xml"
+  },
+  {
+    "source_name": "Google DeepMin Blog",
+    "url": "https://deepmind.google/blog/rss.xml"
+  },
+  {
+    "source_name": "Hugging Face Blog",
+    "url": "https://huggingface.co./blog/feed.xml"
+  },
+  {
+    "source_name": "Simon Willison's Weblog",
+    "url": "https://simonwillison.net/atom/entries/"
+  },
+  {
+    "source_name": "Ahead of AI",
+    "url": "https://magazine.sebastianraschka.com/feed"
+  },
+  {
+    "source_name": "The Gradient",
+    "url": "https://thegradient.pub/rss/"
+  },
+  {
+    "source_name": "MIT Technology Review",
+    "url": "https://www.technologyreview.com/topic/artificial-intelligence/feed"
+  },
+  {
+    "source_name": "TechCrunch AI",
+    "url": "https://techcrunch.com/category/artificial-intelligence/feed/"
+  },
+  {
+    "source_name": "VentureBeat AI",
+    "url": "https://venturebeat.com/category/ai/feed"
+  },
+  {
+    "source_name": "Last Week in Ai",
+    "url": "https://lastweekin.ai/feed"
+  }
+]
