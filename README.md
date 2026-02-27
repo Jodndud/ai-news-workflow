@@ -5,8 +5,8 @@
 - *이 워크플루우는 `Google Antigravity`로 제작했습니다.*
 - *눈높이에 딱 맞는 파인만식 설명*
 
-<img src="./assets/뉴스요약예시-1.png" alt="" width="400" />
-<img src="./assets/뉴스요약예시-1.png" alt="" width="400" />
+<img src="./assets/뉴스요약예시-1.png" alt="예시1" width="600" />
+<img src="./assets/뉴스요약예시-2.png" alt="예시2" width="600" />
 
 ---
 
