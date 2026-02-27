@@ -4,8 +4,9 @@
 - *옵시디언 환경에 맞는 md 파일로 저장됩니다.*
 - *이 워크플루우는 `Google Antigravity`로 제작했습니다.*
 - *눈높이에 딱 맞는 파인만식 설명*
-![요약1](./assets/뉴스요약예시-1.png)
-![요약2](./assets/뉴스요약예시-2.png)
+
+<img src="./assets/뉴스요약예시-1.png" alt="" width="400" />
+<img src="./assets/뉴스요약예시-1.png" alt="" width="400" />
 
 ---
 
